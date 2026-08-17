@@ -1,8 +1,8 @@
 # Pedir dos valores y realizar una multiplicacion y mostrar el resultado
 
-primerValor = input("Ingresar primer valor: ")
-segundoValor = input("Ingresar segundo valor: ")
+primerValor = float(input("Ingrese el primer valor: "))
+segundoValor = float(input("Ingrese el segundo valor: "))
 
-multiplicacion = int(primerValor) * int(segundoValor)
+multiplicacion = primerValor * segundoValor
 
-print(multiplicacion)
+print("El resultado de la multiplicación es:", multiplicacion)
