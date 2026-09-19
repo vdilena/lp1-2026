@@ -3,6 +3,15 @@ alumnoUnoNombre = "Carolina Gomez"
 alumnoUnoFechaNacimiento = "15/08/2000"
 alumnoUnoNotaUltimoFinal = 8
 alumnoUnoCantidadFinalesAprobados = 3
+datosAlumnoUnoFecha = alumnoUnoFechaNacimiento.split("/")
+# print(f"Dato de año: {datosFecha[2]}")
+datoAlumnoUnoMenorOMayor = ""
+
+if (2026 - int(datosAlumnoUnoFecha[2])) >= 18:
+    datoAlumnoUnoMenorOMayor = " es mayor"
+else:
+    datoAlumnoUnoMenorOMayor = " es menor"
+
 print(
     "Bienvenida "
     + alumnoUnoNombre
@@ -12,10 +21,13 @@ print(
     + str(alumnoUnoNotaUltimoFinal)
     + " y aprobo "
     + str(alumnoUnoCantidadFinalesAprobados)
-    + " finales"
+    + " finales "
+    + " y"
+    + datoAlumnoUnoMenorOMayor
 )
 
-# Alumno 2
+
+""" # Alumno 2
 alumnoDosNombre = "Juan Perez"
 alumnoDosFechaNacimiento = "02/03/1995"
 alumnoDosNotaUltimoFinal = 5
@@ -40,4 +52,4 @@ alumnoCuatroNotaUltimoFinal = 10
 alumnoCuatroCantidadFinalesAprobados = 12
 print(
     f"Bienvenido {alumnoCuatroNombre} que nació el {alumnoCuatroFechaNacimiento} que se saco en el ultimo final {str(alumnoCuatroNotaUltimoFinal)} y aprobo {str(alumnoCuatroCantidadFinalesAprobados)} finales"
-)
+) """
