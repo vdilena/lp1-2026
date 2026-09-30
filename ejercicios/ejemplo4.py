@@ -1,55 +1,59 @@
+CANTIDAD_TOTAL_FINALES = 40
+
+
+def alumnoCreado(nombre, fechaNac, notaFinal, cantFinalesAprobados):
+    nuevoAlumno = {
+        "nombre": nombre,
+        "fechaNacimiento": fechaNac,
+        "notaFinal": notaFinal,
+        "cantFinalesAprobados": cantFinalesAprobados,
+    }
+
+    return nuevoAlumno
+
+
+def alumnoMayorOMenor(fechaNac):
+    datosAlumnoFecha = fechaNac.split("/")
+    resultado = ""
+    if (2026 - int(datosAlumnoFecha[2])) >= 18:
+        resultado = " es mayor"
+    else:
+        resultado = " es menor"
+
+    return resultado
+
+
+def mostrarAlumno(alumno):
+    print(
+        "Bienvenida "
+        + alumno["nombre"]
+        + " que nació el "
+        + alumno.get("fechaNacimiento")
+        + " que se saco en el ultimo final "
+        + str(alumno["notaFinal"])
+        + " y aprobo "
+        + str(alumno.get("cantFinalesAprobados"))
+        + " finales "
+        + " y"
+        + alumnoMayorOMenor(alumno.get("fechaNacimiento"))
+        + " y le quedan "
+        + str(CANTIDAD_TOTAL_FINALES - alumno.get("cantFinalesAprobados"))
+        + " finales para recibirse"
+    )
+
+
 # Alumno 1
-alumnoUnoNombre = "Carolina Gomez"
-alumnoUnoFechaNacimiento = "15/08/2000"
-alumnoUnoNotaUltimoFinal = 8
-alumnoUnoCantidadFinalesAprobados = 3
-datosAlumnoUnoFecha = alumnoUnoFechaNacimiento.split("/")
-# print(f"Dato de año: {datosFecha[2]}")
-datoAlumnoUnoMenorOMayor = ""
+alumnoUno = alumnoCreado("Carolina Gomez", "15/08/2000", 8, 3)
+mostrarAlumno(alumnoUno)
 
-if (2026 - int(datosAlumnoUnoFecha[2])) >= 18:
-    datoAlumnoUnoMenorOMayor = " es mayor"
-else:
-    datoAlumnoUnoMenorOMayor = " es menor"
-
-print(
-    "Bienvenida "
-    + alumnoUnoNombre
-    + " que nació el "
-    + alumnoUnoFechaNacimiento
-    + " que se saco en el ultimo final "
-    + str(alumnoUnoNotaUltimoFinal)
-    + " y aprobo "
-    + str(alumnoUnoCantidadFinalesAprobados)
-    + " finales "
-    + " y"
-    + datoAlumnoUnoMenorOMayor
-)
-
-
-""" # Alumno 2
-alumnoDosNombre = "Juan Perez"
-alumnoDosFechaNacimiento = "02/03/1995"
-alumnoDosNotaUltimoFinal = 5
-alumnoDosCantidadFinalesAprobados = 1
-print(
-    f"Bienvenido {alumnoDosNombre} que nació el {alumnoDosFechaNacimiento} que se saco en el ultimo final {str(alumnoDosNotaUltimoFinal)} y aprobo {str(alumnoDosCantidadFinalesAprobados)} finales"
-)
+# Alumno 2
+alumnoDos = alumnoCreado("Juan Perez", "02/03/2012", 5, 1)
+mostrarAlumno(alumnoDos)
 
 # Alumno 3
-alumnoTresNombre = "Santiago Gimenez"
-alumnoTresFechaNacimiento = "19/07/1988"
-alumnoTresNotaUltimoFinal = 10
-alumnoTresCantidadFinalesAprobados = 4
-print(
-    f"Bienvenido {alumnoTresNombre} que nació el {alumnoTresFechaNacimiento} que se saco en el ultimo final {str(alumnoTresNotaUltimoFinal)} y aprobo {str(alumnoTresCantidadFinalesAprobados)} finales"
-)
+alumnoTres = alumnoCreado("Santiago Gimenez", "19/07/1988", 10, 4)
+mostrarAlumno(alumnoTres)
 
 # Alumno 4
-alumnoCuatroNombre = "Julieta Salvatierra"
-alumnoCuatroFechaNacimiento = "06/12/1999"
-alumnoCuatroNotaUltimoFinal = 10
-alumnoCuatroCantidadFinalesAprobados = 12
-print(
-    f"Bienvenido {alumnoCuatroNombre} que nació el {alumnoCuatroFechaNacimiento} que se saco en el ultimo final {str(alumnoCuatroNotaUltimoFinal)} y aprobo {str(alumnoCuatroCantidadFinalesAprobados)} finales"
-) """
+alumnoCuatro = alumnoCreado("Julieta Salvatierra", "06/12/1999", 10, 12)
+mostrarAlumno(alumnoCuatro)
